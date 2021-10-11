@@ -4,11 +4,5 @@
     "repository":  "android_vendor_qcom_opensource_commonsys",
     "target_path": "vendor/qcom/opensource/commonsys",
     "revision":    "android-9.0"
-  },
-   {
-    "remote":      "LineageOS",
-    "repository":  "android_kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998",
-    "revision":    "lineage-18.1"
   }
 ]
