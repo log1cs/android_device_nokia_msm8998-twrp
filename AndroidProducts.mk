@@ -16,3 +16,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/omni_cheeseburger.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_cheeseburger-eng \
+    omni_cheeseburger-userdebug
