@@ -52,8 +52,6 @@ Now you can sync your source:
 repo sync
 ```
 
-To automatically make the twrp installer, you need to import this commit in the build/make path: https://gerrit.omnirom.org/#/c/android_build/+/33182/
-
 Finally execute these:
 
 ```
