@@ -22,7 +22,7 @@ Tree for building Unofficial TWRP for OnePlus 5.
 
 ## Kernel
 
-Kernel source: (Prebuilt)
+Kernel source:
 https://github.com/LineageOS/android_kernel_oneplus_msm8998
 
 ## Compile
@@ -42,6 +42,7 @@ Then add to a local manifest (if you don't have .repo/local_manifest then make t
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <project name="LineageOS/android_kernel_oneplus_msm8998" path="kernel/oneplus/msm8998" remote="github" revision="lineage-18.1"/>
   <project name="faoliveira78/android_device_oneplus_cheeseburger" path="device/oneplus/cheeseburger" remote="github" revision="android-10"/>
 </manifest>
 ```
@@ -51,8 +52,6 @@ Now you can sync your source:
 ```
 repo sync
 ```
-
-To automatically make the twrp installer, you need to import this commit in the build/make path: https://gerrit.omnirom.org/#/c/android_build/+/33182/
 
 Finally execute these:
 

@@ -53,8 +53,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Crypto
-TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
-TARGET_HW_DISK_ENCRYPTION := false
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_RESETPROP := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -72,12 +70,12 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_PREBUILT_KERNEL := device/oneplus/cheeseburger/prebuilt/Image.gz-dtb
+#TARGET_PREBUILT_KERNEL := device/oneplus/cheeseburger/prebuilt/Image.gz-dtb
 
-#TARGET_KERNEL_ARCH := arm64
-#TARGET_KERNEL_CLANG_COMPILE := true
-#TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
-#TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
+TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
@@ -150,7 +148,6 @@ TW_USE_TOOLBOX := true
 
 #Extra
 BOARD_SUPPRESS_SECURE_ERASE := true
-TW_IGNORE_MISC_WIPE_DATA := true
 TW_EXCLUDE_TWRPAPP := true
 TW_HAS_EDL_MODE := true
 TWRP_INCLUDE_LOGCAT:= true
