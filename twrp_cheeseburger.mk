@@ -22,7 +22,7 @@ $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # qcom standard decryption
 PRODUCT_PACKAGES += \
@@ -32,15 +32,15 @@ PRODUCT_PACKAGES += \
 # tzdata
 PRODUCT_PACKAGES += \
     tzdata_twrp
-    
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
     ro.hardware.gatekeeper=msm8998 \
-    ro.vendor.build.security_patch=2099-12-31
-    
+    ro.vendor.build.security_patch=2127-12-31
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cheeseburger
-PRODUCT_NAME := omni_cheeseburger
+PRODUCT_NAME := twrp_cheeseburger
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := OnePlus A5000
 PRODUCT_MANUFACTURER := OnePlus
