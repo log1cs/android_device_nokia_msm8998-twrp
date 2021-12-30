@@ -50,6 +50,7 @@ TARGET_USES_UEFI := true
 # Crypto
 TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
+TW_USE_FSCRYPT_POLICY := 1
 TW_INCLUDE_RESETPROP := true
 PLATFORM_SECURITY_PATCH := 2127-12-31
 VENDOR_SECURITY_PATCH := 2127-12-31
@@ -57,29 +58,18 @@ PLATFORM_VERSION := 127
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom \
-	user_debug=31 \
-	msm_rtb.filter=0x37 \
-	ehci-hcd.park=3 \
-	lpm_levels.sleep_disabled=1 \
-	sched_enable_hmp=1 \
-	sched_enable_power_aware=1 \
-	service_locator.enable=1 \
-	swiotlb=2048 \
-	androidboot.usbconfigfs=true \
-	androidboot.usbcontroller=a800000.dwc3 \
-	firmware_class.path=/vendor/firmware_mnt/image \
-	loop.max_part=7 \
-	androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
+BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 sched_enable_hmp=0 sched_enable_power_aware=1
+BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.configfs=true
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 loop.max_part=7
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-#TARGET_PREBUILT_KERNEL := device/oneplus/cheeseburger/prebuilt/Image.gz-dtb
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
-TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
+TARGET_KERNEL_CONFIG := nb1_defconfig
+TARGET_KERNEL_SOURCE := kernel/nokia/msm8998
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
@@ -90,11 +80,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 56908316672
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -139,7 +127,7 @@ BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := "26"
+TW_DEFAULT_BRIGHTNESS := "30"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
@@ -148,7 +136,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
 
-#Extra
+# Extra
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_EXCLUDE_TWRPAPP := true
 TW_HAS_EDL_MODE := true

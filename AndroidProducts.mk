@@ -15,8 +15,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_cheeseburger.mk
+    $(LOCAL_DIR)/twrp_NB1.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_cheeseburger-eng \
-    twrp_cheeseburger-userdebug
+    twrp_NB1-eng \
+    twrp_NB1-userdebug
