@@ -29,6 +29,7 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     setprop prepdecrypt.loglevel 2
+    setprop prepdecrypt.setpatch true
     
 on boot
     setprop sys.usb.config mtp,adb
