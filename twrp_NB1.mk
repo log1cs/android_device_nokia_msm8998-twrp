@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := OnePlus 5
+PRODUCT_RELEASE_NAME := Nokia 8
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -38,13 +38,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gatekeeper=msm8998 \
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cheeseburger
-PRODUCT_NAME := twrp_cheeseburger
-PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := OnePlus A5000
-PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_DEVICE := NB1
+PRODUCT_NAME := twrp_NB1
+PRODUCT_BRAND := Nokia
+PRODUCT_MODEL := Nokia 8
+PRODUCT_MANUFACTURER := HMD Global
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="OnePlus5-user 10 QKQ1.191014.012 2010292059 release-keys"
+    PRIVATE_BUILD_DESC="NB1_00WW_FIH-user 9 PPR1.180610.011 00WW_5_16A release-keys"
 
-BUILD_FINGERPRINT := OnePlus/OnePlus5/OnePlus5:10/QKQ1.191014.012/2010292059:user/release-keys
+BUILD_FINGERPRINT := Nokia/NB1_00WW_FIH/NB1:9/PPR1.180610.011/00WW_5_16A:user/release-keys
