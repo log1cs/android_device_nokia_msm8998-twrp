@@ -92,6 +92,12 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Enable A/B Specific Flags
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_USES_RECOVERY_AS_BOOT := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RECOVERY := false
+
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -99,6 +105,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.base@1.0 \
+    bootctrl.$(TARGET_BOARD_PLATFORM) \
     ashmemd \
     ashmemd_aidl_interface-cpp \
     libandroidicu \
