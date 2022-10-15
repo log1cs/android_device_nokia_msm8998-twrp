@@ -68,9 +68,9 @@ jobs:
               rm -rf .repo/
               mka $TARGET
 
-       - name: Uploading recovery image
+       - name: Uploading bootable recovery image
          run: |
               cd work/out/target/product/$DEVICE
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet Image.*
-              ./transfer wet recovery.img
+              # Uploading boot image
+              ./transfer wet boot.img
