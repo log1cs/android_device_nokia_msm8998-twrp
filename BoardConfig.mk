@@ -23,6 +23,10 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+# Generate a zip when building TWRP.
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := device/nokia/NB1/installer
+
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
