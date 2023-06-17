@@ -1,4 +1,4 @@
-name: Build TWRP for NB1
+name: Build TWRP for NLA
 
 on:
 #  release:
@@ -18,9 +18,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-  DEVICE: NB1
-  DT_LINK: https://github.com/log1cs/android_device_nokia_msm8998-twrp -b NB1
-  DT_PATH: device/nokia/NB1
+  DEVICE: NLA
+  DT_LINK: https://github.com/log1cs/android_device_nokia_msm8998-twrp -b NLA
+  DT_PATH: device/nokia/NLA
   TARGET: bootimage
   TZ: America/Brazil
 

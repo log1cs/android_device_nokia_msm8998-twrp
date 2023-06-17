@@ -25,7 +25,7 @@
 
 # Generate a zip when building TWRP.
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/nokia/NB1/installer
+RECOVERY_INSTALLER_PATH := device/nokia/NLA/installer
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -72,10 +72,10 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-#TARGET_KERNEL_CONFIG := nb1_defconfig
+#TARGET_KERNEL_CONFIG := lineageos_NLA_defconfig
 #TARGET_KERNEL_SOURCE := kernel/nokia/msm8998
 
-TARGET_FORCE_PREBUILT_KERNEL := device/nokia/NB1/prebuilts/Image.gz-dtb
+TARGET_FORCE_PREBUILT_KERNEL := device/nokia/NLA/prebuilts/Image.gz-dtb
 PRODUCT_COPY_FILES += \
 	$(TARGET_FORCE_PREBUILT_KERNEL):kernel
 
