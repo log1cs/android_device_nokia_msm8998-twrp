@@ -1,39 +1,38 @@
 #!/system/bin/sh
 # This script is needed to automatically set device props.
 
-
-load_dumpling()
+load_NB1()
 {
-    resetprop "ro.product.name" "OnePlus5T"
-    resetprop "ro.display.series" "OnePlus 5T"
-    resetprop "ro.product.model" "OnePlus A5010"
-    resetprop "ro.build.product" "dumpling"
-    resetprop "ro.product.device" "dumpling"
-    resetprop "ro.product.vendor.device" "dumpling"
-  }
-
-  load_cheeseburger()
-  {
-    resetprop "ro.product.name" "OnePlus5"
-    resetprop "ro.display.series" "OnePlus 5"
-    resetprop "ro.product.model" "OnePlus A5000"
-    resetprop "ro.build.product" "cheeseburger"
-    resetprop "ro.product.device" "cheeseburger"
-    resetprop "ro.product.vendor.device" "cheeseburger"
+    resetprop "ro.product.name" "Nokia 8"
+    resetprop "ro.display.series" "Nokia 8"
+    resetprop "ro.product.model" "TA-1004"
+    resetprop "ro.build.product" "NLA"
+    resetprop "ro.product.device" "NLA"
+    resetprop "ro.product.vendor.device" "NLA"
 }
 
-rf=$(getprop ro.boot.rf_version)
+load_A1N()
+{
+    resetprop "ro.product.name" "Nokia 8 Sirocco"
+    resetprop "ro.display.series" "Nokia 8 Sirocco"
+    resetprop "ro.product.model" "TA-1005"
+    resetprop "ro.build.product" "A1N_sprout"
+    resetprop "ro.product.device" "A1N_sprout"
+    resetprop "ro.product.vendor.device" "A1N_sprout"
+}
+
+rf=$(getprop ro.boot.project_codename)
 echo $rf
 
 case $rf in
-    21)
-        load_dumpling
+    "NB1")
+        load_NB1
         ;;
-    53)
-        load_cheeseburger
+    "A1N")
+        load_A1N
         ;;
     *)
-        load_dumpling
+        load_NB1
         ;;
 esac
 

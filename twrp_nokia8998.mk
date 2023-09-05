@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Platform
+PRODUCT_PLATFORM := msm8998
+
 # Release name
 PRODUCT_RELEASE_NAME := nokia8998
 
