@@ -1,5 +1,5 @@
 #
-# Copyright 2017 - 2022 The Android Open Source Project
+# Copyright 2017 - 2023 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,21 +15,22 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := cheeseburger_dumpling
+PRODUCT_RELEASE_NAME := nokia8998
 
-DEVICE_PATH := device/oneplus/$(PRODUCT_RELEASE_NAME)
+DEVICE_PATH := device/nokia/$(PRODUCT_RELEASE_NAME)
 
-# Inherit from oxygen device
+# Inherit from nokia8998 device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
 PRODUCT_NAME := twrp_$(PRODUCT_RELEASE_NAME)
-PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := OnePlus A5010
-PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_BRAND := Nokia
+PRODUCT_MODEL := Nokia 8 / Sirocco
+PRODUCT_MANUFACTURER := HMD Global
 
+# Use A1N build fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="OnePlus5T-user 10 QKQ1.191014.012 2010292059 release-keys"
+	PRIVATE_BUILD_DESC="A1N_00WW_FIH-user 10 QKQ1.190828.002 00WW_5_14L release-keys"
 
-BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2010292059:user/release-keys
+BUILD_FINGERPRINT := Nokia/Avenger_00WW/A1N_sprout:10/QKQ1.190828.002/00WW_5_120:user/release-keys
