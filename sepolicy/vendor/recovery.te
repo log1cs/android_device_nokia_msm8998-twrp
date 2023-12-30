@@ -1,0 +1,621 @@
+allow recovery self:netlink_selinux_socket { create };
+allow recovery self:netlink_selinux_socket { bind };
+allow recovery selinuxfs:dir { read };
+allow recovery selinuxfs:dir { open };
+allow recovery selinuxfs:file { write };
+allow recovery kernel:security { compute_av };
+allow recovery self:binder { set_context_mgr };
+allow recovery self:capability2 { wake_alarm };
+allow recovery vndbinder_device:chr_file { read };
+allow recovery vndbinder_device:chr_file { write };
+allow recovery vndbinder_device:chr_file { open };
+allow recovery vndbinder_device:chr_file { ioctl };
+set_prop(recovery, hwservicemanager_prop)
+binder_call(recovery, self)
+get_prop(recovery, keystore_crash_prop)
+set_prop(recovery, keystore_crash_prop)
+set_prop(recovery, ctl_interface_start_prop)
+allow recovery sysfs:file { getattr };
+allow recovery configfs:file { getattr };
+allow recovery sysfs:file { read };
+allow recovery sysfs:file { open };
+allow recovery sysfs:file { write };
+set_prop(recovery, default_prop)
+allow recovery rootfs:dir { write };
+allow recovery rootfs:dir { add_name };
+allow recovery rootfs:lnk_file { create };
+allow recovery rootfs:dir { create };
+allow recovery sysfs_rtc:dir { search };
+allow recovery self:capability { sys_time };
+allow recovery mnt_vendor_file:dir { getattr };
+allow recovery self:process { execmem };
+allow recovery ashmem_libcutils_device:chr_file { execute };
+allow recovery unencrypted_data_file:dir { search };
+allow recovery unencrypted_data_file:file { getattr };
+set_prop(recovery, vold_status_prop)
+allow recovery unencrypted_data_file:file { read };
+allow recovery unencrypted_data_file:file { open };
+allow recovery property_data_file:dir { search };
+set_prop(recovery, properties_serial)
+set_prop(recovery, bootloader_prop)
+allow recovery device:chr_file { read write };
+allow recovery device:chr_file { open };
+allow recovery self:capability { sys_rawio };
+allow recovery device:chr_file { ioctl };
+allow recovery device:chr_file { setattr };
+allow recovery ion_device:chr_file { read };
+allow recovery ion_device:chr_file { open };
+allow recovery ion_device:chr_file { ioctl };
+set_prop(recovery, vendor_default_prop)
+allow recovery media_rw_data_file:dir { search };
+allow recovery media_rw_data_file:dir { getattr };
+allow recovery rootfs:file { create };
+allow recovery rootfs:file { write };
+allow recovery block_device:dir { write };
+allow recovery block_device:dir { add_name };
+allow recovery block_device:lnk_file { create };
+allow recovery block_device:dir { remove_name };
+allow recovery block_device:lnk_file { unlink };
+allow recovery block_device:blk_file { ioctl };
+allow recovery system_data_root_file:dir { read };
+allow recovery system_data_root_file:dir { open };
+allow recovery system_data_file:dir { read };
+allow recovery system_data_file:dir { open };
+allow recovery shell_test_data_file:dir { getattr };
+allow recovery shell_test_data_file:dir { read };
+allow recovery shell_test_data_file:dir { open };
+allow recovery shell_test_data_file:dir { search };
+allow recovery trace_data_file:dir { getattr };
+allow recovery trace_data_file:dir { read };
+allow recovery trace_data_file:dir { open };
+allow recovery trace_data_file:dir { search };
+allow recovery shell_data_file:dir { getattr };
+allow recovery shell_data_file:dir { read };
+allow recovery shell_data_file:dir { open };
+allow recovery shell_data_file:dir { search };
+allow recovery gsi_persistent_data_file:file { getattr };
+allow recovery adb_data_file:dir { getattr };
+allow recovery adb_data_file:dir { read };
+allow recovery adb_data_file:dir { open };
+allow recovery backup_data_file:dir { getattr };
+allow recovery backup_data_file:dir { read };
+allow recovery backup_data_file:dir { open };
+allow recovery backup_data_file:file { getattr };
+allow recovery tombstone_data_file:dir { getattr };
+allow recovery tombstone_data_file:dir { read };
+allow recovery tombstone_data_file:dir { open };
+allow recovery server_configurable_flags_data_file:dir { getattr };
+allow recovery server_configurable_flags_data_file:dir { read };
+allow recovery server_configurable_flags_data_file:dir { open };
+allow recovery anr_data_file:dir { getattr };
+allow recovery anr_data_file:dir { read };
+allow recovery anr_data_file:dir { open };
+allow recovery apk_private_data_file:dir { getattr };
+allow recovery apk_private_data_file:dir { read };
+allow recovery apk_private_data_file:dir { open };
+allow recovery vold_data_file:dir { getattr };
+allow recovery vold_data_file:dir { read };
+allow recovery vold_data_file:dir { open };
+allow recovery vold_data_file:dir { search };
+allow recovery apex_rollback_data_file:dir { getattr };
+allow recovery apex_rollback_data_file:dir { read };
+allow recovery apex_rollback_data_file:dir { open };
+allow recovery apex_rollback_data_file:dir { search };
+allow recovery storaged_data_file:dir { getattr };
+allow recovery storaged_data_file:dir { read };
+allow recovery storaged_data_file:dir { open };
+allow recovery storaged_data_file:dir { search };
+allow recovery rollback_data_file:dir { getattr };
+allow recovery rollback_data_file:dir { read };
+allow recovery rollback_data_file:dir { open };
+allow recovery rollback_data_file:dir { search };
+allow recovery apex_module_data_file:dir { getattr };
+allow recovery apex_module_data_file:dir { read };
+allow recovery apex_module_data_file:dir { open };
+allow recovery apex_module_data_file:dir { search };
+allow recovery system_data_file:file { getattr };
+allow recovery vendor_data_file:dir { read };
+allow recovery vendor_data_file:dir { open };
+allow recovery fingerprint_vendor_data_file:dir { getattr };
+allow recovery fingerprint_vendor_data_file:dir { read };
+allow recovery fingerprint_vendor_data_file:dir { open };
+allow recovery fingerprint_vendor_data_file:dir { search };
+allow recovery face_vendor_data_file:dir { getattr };
+allow recovery face_vendor_data_file:dir { read };
+allow recovery face_vendor_data_file:dir { open };
+allow recovery face_vendor_data_file:dir { search };
+allow recovery font_data_file:dir { getattr };
+allow recovery font_data_file:dir { read };
+allow recovery font_data_file:dir { open };
+allow recovery font_data_file:dir { search };
+allow recovery nfc_data_file:dir { getattr };
+allow recovery nfc_data_file:dir { read };
+allow recovery nfc_data_file:dir { open };
+allow recovery ota_data_file:dir { getattr };
+allow recovery ota_data_file:dir { read };
+allow recovery ota_data_file:dir { open };
+allow recovery dalvikcache_data_file:dir { getattr };
+allow recovery dalvikcache_data_file:dir { read };
+allow recovery dalvikcache_data_file:dir { open };
+allow recovery dalvikcache_data_file:file { getattr };
+allow recovery vendor_data_file:file { getattr };
+allow recovery wpa_data_file:dir { getattr };
+allow recovery wpa_data_file:dir { read };
+allow recovery wpa_data_file:dir { open };
+allow recovery wpa_data_file:dir { search };
+allow recovery wpa_data_file:file { getattr };
+allow recovery hostapd_data_file:dir { getattr };
+allow recovery hostapd_data_file:dir { read };
+allow recovery hostapd_data_file:dir { open };
+allow recovery hostapd_data_file:dir { search };
+allow recovery drm_data_file:dir { getattr };
+allow recovery drm_data_file:dir { read };
+allow recovery drm_data_file:dir { open };
+allow recovery drm_data_file:file { getattr };
+allow recovery ota_package_file:dir { getattr };
+allow recovery ota_package_file:dir { read };
+allow recovery ota_package_file:dir { open };
+allow recovery apk_data_file:dir { getattr };
+allow recovery apk_data_file:dir { read };
+allow recovery apk_data_file:dir { open };
+allow recovery asec_image_file:dir { getattr };
+allow recovery asec_image_file:dir { read };
+allow recovery asec_image_file:dir { open };
+allow recovery recovery_data_file:dir { getattr };
+allow recovery recovery_data_file:dir { read };
+allow recovery recovery_data_file:dir { open };
+allow recovery recovery_data_file:dir { search };
+allow recovery recovery_data_file:file { getattr };
+allow recovery bluetooth_data_file:dir { getattr };
+allow recovery bluetooth_data_file:dir { read };
+allow recovery bluetooth_data_file:dir { open };
+allow recovery bluetooth_data_file:dir { search };
+allow recovery bluetooth_data_file:file { getattr };
+allow recovery bluetooth_logs_data_file:dir { getattr };
+allow recovery bluetooth_logs_data_file:dir { read };
+allow recovery bluetooth_logs_data_file:dir { open };
+allow recovery bluetooth_logs_data_file:dir { search };
+allow recovery dhcp_data_file:dir { getattr };
+allow recovery dhcp_data_file:dir { read };
+allow recovery dhcp_data_file:dir { open };
+allow recovery dhcp_data_file:dir { search };
+allow recovery keystore_data_file:dir { getattr };
+allow recovery keystore_data_file:dir { read };
+allow recovery keystore_data_file:dir { open };
+allow recovery keystore_data_file:dir { search };
+allow recovery keystore_data_file:file { getattr };
+allow recovery bootstat_data_file:dir { getattr };
+allow recovery bootstat_data_file:dir { read };
+allow recovery bootstat_data_file:dir { open };
+allow recovery bootstat_data_file:dir { search };
+allow recovery bootstat_data_file:file { getattr };
+allow recovery shared_relro_file:dir { getattr };
+allow recovery shared_relro_file:dir { read };
+allow recovery shared_relro_file:dir { open };
+allow recovery shared_relro_file:dir { search };
+allow recovery shared_relro_file:file { getattr };
+allow recovery stats_data_file:dir { getattr };
+allow recovery stats_data_file:dir { read };
+allow recovery stats_data_file:dir { open };
+allow recovery stats_data_file:dir { search };
+allow recovery radio_data_file:dir { getattr };
+allow recovery radio_data_file:dir { read };
+allow recovery radio_data_file:dir { open };
+allow recovery radio_data_file:dir { search };
+allow recovery appcompat_data_file:dir { getattr };
+allow recovery appcompat_data_file:dir { read };
+allow recovery appcompat_data_file:dir { open };
+allow recovery appcompat_data_file:dir { search };
+allow recovery net_data_file:dir { getattr };
+allow recovery net_data_file:dir { read };
+allow recovery net_data_file:dir { open };
+allow recovery net_data_file:dir { search };
+allow recovery net_data_file:file { getattr };
+allow recovery profman_dump_data_file:dir { getattr };
+allow recovery profman_dump_data_file:dir { read };
+allow recovery profman_dump_data_file:dir { open };
+allow recovery profman_dump_data_file:dir { search };
+allow recovery systemkeys_data_file:dir { getattr };
+allow recovery systemkeys_data_file:dir { read };
+allow recovery systemkeys_data_file:dir { open };
+allow recovery systemkeys_data_file:dir { search };
+allow recovery credstore_data_file:dir { getattr };
+allow recovery credstore_data_file:dir { read };
+allow recovery credstore_data_file:dir { open };
+allow recovery credstore_data_file:dir { search };
+allow recovery emergency_data_file:dir { getattr };
+allow recovery emergency_data_file:dir { read };
+allow recovery emergency_data_file:dir { open };
+allow recovery emergency_data_file:dir { search };
+allow recovery boottrace_data_file:dir { getattr };
+allow recovery boottrace_data_file:dir { read };
+allow recovery boottrace_data_file:dir { open };
+allow recovery boottrace_data_file:dir { search };
+allow recovery gatekeeper_data_file:dir { getattr };
+allow recovery gatekeeper_data_file:dir { read };
+allow recovery gatekeeper_data_file:dir { open };
+allow recovery gatekeeper_data_file:dir { search };
+allow recovery gatekeeper_data_file:file { getattr };
+allow recovery nfc_logs_data_file:dir { getattr };
+allow recovery nfc_logs_data_file:dir { read };
+allow recovery nfc_logs_data_file:dir { open };
+allow recovery nfc_logs_data_file:dir { search };
+allow recovery vold_data_file:file { getattr };
+allow recovery network_watchlist_data_file:dir { getattr };
+allow recovery network_watchlist_data_file:dir { read };
+allow recovery network_watchlist_data_file:dir { open };
+allow recovery network_watchlist_data_file:dir { search };
+allow recovery misc_user_data_file:dir { getattr };
+allow recovery misc_user_data_file:dir { read };
+allow recovery misc_user_data_file:dir { open };
+allow recovery misc_user_data_file:dir { search };
+allow recovery update_engine_log_data_file:dir { getattr };
+allow recovery update_engine_log_data_file:dir { read };
+allow recovery update_engine_log_data_file:dir { open };
+allow recovery update_engine_log_data_file:dir { search };
+allow recovery update_engine_log_data_file:file { getattr };
+allow recovery textclassifier_data_file:dir { getattr };
+allow recovery textclassifier_data_file:dir { read };
+allow recovery textclassifier_data_file:dir { open };
+allow recovery textclassifier_data_file:dir { search };
+allow recovery user_profile_data_file:dir { getattr };
+allow recovery user_profile_data_file:dir { read };
+allow recovery user_profile_data_file:dir { open };
+allow recovery user_profile_data_file:dir { search };
+allow recovery user_profile_root_file:dir { getattr };
+allow recovery user_profile_root_file:dir { read };
+allow recovery user_profile_root_file:dir { open };
+allow recovery user_profile_root_file:dir { search };
+allow recovery user_profile_data_file:file { getattr };
+allow recovery vpn_data_file:dir { getattr };
+allow recovery vpn_data_file:dir { read };
+allow recovery vpn_data_file:dir { open };
+allow recovery vpn_data_file:dir { search };
+allow recovery prereboot_data_file:dir { getattr };
+allow recovery prereboot_data_file:dir { read };
+allow recovery prereboot_data_file:dir { open };
+allow recovery prereboot_data_file:dir { search };
+allow recovery method_trace_data_file:dir { getattr };
+allow recovery method_trace_data_file:dir { read };
+allow recovery method_trace_data_file:dir { open };
+allow recovery method_trace_data_file:dir { search };
+allow recovery media_data_file:dir { getattr };
+allow recovery media_data_file:dir { read };
+allow recovery media_data_file:dir { open };
+allow recovery media_data_file:dir { search };
+allow recovery snapshotctl_log_data_file:dir { getattr };
+allow recovery snapshotctl_log_data_file:dir { read };
+allow recovery snapshotctl_log_data_file:dir { open };
+allow recovery snapshotctl_log_data_file:dir { search };
+allow recovery radio_core_data_file:dir { getattr };
+allow recovery radio_core_data_file:dir { read };
+allow recovery radio_core_data_file:dir { open };
+allow recovery radio_core_data_file:dir { search };
+allow recovery adb_keys_file:dir { getattr };
+allow recovery adb_keys_file:dir { read };
+allow recovery adb_keys_file:dir { open };
+allow recovery adb_keys_file:dir { search };
+allow recovery wm_trace_data_file:dir { getattr };
+allow recovery wm_trace_data_file:dir { read };
+allow recovery wm_trace_data_file:dir { open };
+allow recovery wm_trace_data_file:dir { search };
+allow recovery wifi_data_file:dir { getattr };
+allow recovery wifi_data_file:dir { read };
+allow recovery wifi_data_file:dir { open };
+allow recovery wifi_data_file:dir { search };
+allow recovery wpa_socket:dir { getattr };
+allow recovery wpa_socket:dir { read };
+allow recovery wpa_socket:dir { open };
+allow recovery wpa_socket:dir { search };
+allow recovery perfetto_traces_data_file:dir { getattr };
+allow recovery perfetto_traces_data_file:dir { read };
+allow recovery perfetto_traces_data_file:dir { open };
+allow recovery perfetto_traces_data_file:dir { search };
+allow recovery perfetto_traces_bugreport_data_file:dir { getattr };
+allow recovery perfetto_traces_bugreport_data_file:dir { read };
+allow recovery perfetto_traces_bugreport_data_file:dir { open };
+allow recovery perfetto_traces_bugreport_data_file:dir { search };
+allow recovery odsign_data_file:dir { getattr };
+allow recovery odsign_data_file:dir { read };
+allow recovery odsign_data_file:dir { open };
+allow recovery odsign_data_file:dir { search };
+allow recovery odsign_data_file:file { getattr };
+allow recovery accessibility_trace_data_file:dir { getattr };
+allow recovery accessibility_trace_data_file:dir { read };
+allow recovery accessibility_trace_data_file:dir { open };
+allow recovery accessibility_trace_data_file:dir { search };
+allow recovery apex_art_data_file:dir { getattr };
+allow recovery apex_art_data_file:dir { read };
+allow recovery apex_art_data_file:dir { open };
+allow recovery apex_art_data_file:dir { search };
+allow recovery audioserver_data_file:dir { getattr };
+allow recovery audioserver_data_file:dir { read };
+allow recovery audioserver_data_file:dir { open };
+allow recovery audioserver_data_file:dir { search };
+allow recovery update_engine_data_file:dir { getattr };
+allow recovery update_engine_data_file:dir { read };
+allow recovery update_engine_data_file:dir { open };
+allow recovery update_engine_data_file:dir { search };
+allow recovery update_engine_data_file:file { getattr };
+allow recovery profcollectd_data_file:dir { getattr };
+allow recovery profcollectd_data_file:dir { read };
+allow recovery profcollectd_data_file:dir { open };
+allow recovery profcollectd_data_file:dir { search };
+allow recovery install_data_file:dir { getattr };
+allow recovery install_data_file:dir { read };
+allow recovery install_data_file:dir { open };
+allow recovery install_data_file:dir { search };
+allow recovery install_data_file:file { getattr };
+allow recovery incident_data_file:dir { getattr };
+allow recovery incident_data_file:dir { read };
+allow recovery incident_data_file:dir { open };
+allow recovery incident_data_file:dir { search };
+allow recovery keychain_data_file:dir { getattr };
+allow recovery keychain_data_file:dir { read };
+allow recovery keychain_data_file:dir { open };
+allow recovery keychain_data_file:dir { search };
+allow recovery stats_data_file:file { getattr };
+allow recovery odrefresh_data_file:dir { getattr };
+allow recovery odrefresh_data_file:dir { read };
+allow recovery odrefresh_data_file:dir { open };
+allow recovery odrefresh_data_file:dir { search };
+allow recovery misc_logd_file:dir { getattr };
+allow recovery misc_logd_file:dir { read };
+allow recovery misc_logd_file:dir { open };
+allow recovery misc_logd_file:dir { search };
+allow recovery misc_logd_file:file { getattr };
+allow recovery perfetto_configs_data_file:dir { getattr };
+allow recovery perfetto_configs_data_file:dir { read };
+allow recovery perfetto_configs_data_file:dir { open };
+allow recovery perfetto_configs_data_file:dir { search };
+allow recovery unencrypted_data_file:dir { getattr };
+get_prop(recovery, property_data_file)
+allow recovery system_data_file:dir { getattr };
+allow recovery app_data_file:dir { getattr };
+allow recovery app_data_file:dir { read };
+allow recovery app_data_file:dir { open };
+allow recovery app_data_file:dir { search };
+allow recovery privapp_data_file:dir { getattr };
+allow recovery privapp_data_file:dir { read };
+allow recovery privapp_data_file:dir { open };
+allow recovery privapp_data_file:dir { search };
+allow recovery privapp_data_file:file { getattr };
+allow recovery system_app_data_file:dir { getattr };
+allow recovery system_app_data_file:dir { read };
+allow recovery system_app_data_file:dir { open };
+allow recovery system_app_data_file:dir { search };
+allow recovery app_data_file:file { getattr };
+allow recovery system_app_data_file:file { getattr };
+allow recovery radio_data_file:file { getattr };
+allow recovery nfc_data_file:dir { search };
+allow recovery nfc_data_file:file { getattr };
+allow recovery apex_data_file:dir { getattr };
+allow recovery apex_data_file:dir { read };
+allow recovery apex_data_file:dir { open };
+allow recovery apex_ota_reserved_file:dir { getattr };
+allow recovery apex_ota_reserved_file:dir { read };
+allow recovery apex_ota_reserved_file:dir { open };
+allow recovery gsi_data_file:dir { getattr };
+allow recovery ringtone_file:dir { getattr };
+allow recovery ringtone_file:dir { read };
+allow recovery ringtone_file:dir { open };
+allow recovery ringtone_file:dir { search };
+allow recovery ringtone_file:file { getattr };
+allow recovery preloads_data_file:dir { getattr };
+allow recovery preloads_data_file:dir { read };
+allow recovery preloads_data_file:dir { open };
+allow recovery resourcecache_data_file:dir { getattr };
+allow recovery resourcecache_data_file:dir { read };
+allow recovery resourcecache_data_file:dir { open };
+allow recovery resourcecache_data_file:file { getattr };
+allow recovery heapdump_data_file:dir { getattr };
+allow recovery heapdump_data_file:dir { read };
+allow recovery heapdump_data_file:dir { open };
+allow recovery heapdump_data_file:dir { search };
+allow recovery environ_system_data_file:dir { getattr };
+allow recovery environ_system_data_file:dir { read };
+allow recovery environ_system_data_file:dir { open };
+allow recovery environ_system_data_file:dir { search };
+allow recovery environ_system_data_file:file { getattr };
+allow recovery fingerprintd_data_file:dir { getattr };
+allow recovery fingerprintd_data_file:dir { read };
+allow recovery fingerprintd_data_file:dir { open };
+allow recovery fingerprintd_data_file:dir { search };
+allow recovery dropbox_data_file:dir { getattr };
+allow recovery dropbox_data_file:dir { read };
+allow recovery dropbox_data_file:dir { open };
+allow recovery dropbox_data_file:dir { search };
+allow recovery dropbox_data_file:file { getattr };
+allow recovery packages_list_file:file { getattr };
+allow recovery system_ndebug_socket:sock_file { getattr };
+allow recovery system_unsolzygote_socket:sock_file { getattr };
+allow recovery staging_data_file:dir { getattr };
+allow recovery staging_data_file:dir { read };
+allow recovery staging_data_file:dir { open };
+allow recovery bootchart_data_file:dir { getattr };
+allow recovery bootchart_data_file:dir { read };
+allow recovery bootchart_data_file:dir { open };
+allow recovery media_rw_data_file:dir { read };
+allow recovery media_rw_data_file:dir { open };
+allow recovery self:netlink_kobject_uevent_socket { create };
+allow recovery self:netlink_kobject_uevent_socket { bind };
+allow recovery linkerconfig_file:dir { getattr };
+allow recovery init_exec:file { getattr };
+get_prop(recovery, aac_drc_prop)
+get_prop(recovery, adbd_config_prop)
+get_prop(recovery, adbd_prop)
+get_prop(recovery, apexd_config_prop)
+get_prop(recovery, apexd_prop)
+get_prop(recovery, apk_verity_prop)
+get_prop(recovery, audio_config_prop)
+get_prop(recovery, bluetooth_a2dp_offload_prop)
+get_prop(recovery, bluetooth_audio_hal_prop)
+get_prop(recovery, bluetooth_prop)
+get_prop(recovery, bootanim_config_prop)
+get_prop(recovery, bootanim_system_prop)
+get_prop(recovery, boottime_prop)
+get_prop(recovery, boottime_public_prop)
+get_prop(recovery, bpf_progs_loaded_prop)
+get_prop(recovery, build_config_prop)
+get_prop(recovery, camera2_extensions_prop)
+get_prop(recovery, camera_calibration_prop)
+get_prop(recovery, camerax_extensions_prop)
+get_prop(recovery, charger_config_prop)
+get_prop(recovery, charger_prop)
+get_prop(recovery, charger_status_prop)
+get_prop(recovery, codec2_config_prop)
+get_prop(recovery, cold_boot_done_prop)
+get_prop(recovery, cpu_variant_prop)
+get_prop(recovery, ctl_adbd_prop)
+get_prop(recovery, ctl_apexd_prop)
+get_prop(recovery, ctl_bootanim_prop)
+get_prop(recovery, ctl_bugreport_prop)
+get_prop(recovery, ctl_console_prop)
+get_prop(recovery, ctl_default_prop)
+get_prop(recovery, ctl_dumpstate_prop)
+get_prop(recovery, ctl_fuse_prop)
+get_prop(recovery, ctl_gsid_prop)
+get_prop(recovery, ctl_interface_restart_prop)
+get_prop(recovery, ctl_interface_start_prop)
+get_prop(recovery, ctl_interface_stop_prop)
+get_prop(recovery, ctl_mdnsd_prop)
+get_prop(recovery, ctl_mediatranscoding_prop)
+get_prop(recovery, ctl_odsign_prop)
+get_prop(recovery, ctl_restart_prop)
+get_prop(recovery, ctl_rildaemon_prop)
+get_prop(recovery, ctl_sigstop_prop)
+get_prop(recovery, ctl_start_prop)
+get_prop(recovery, ctl_stop_prop)
+get_prop(recovery, dck_prop)
+get_prop(recovery, debugfs_restriction_prop)
+get_prop(recovery, device_config_activity_manager_native_boot_prop)
+get_prop(recovery, device_config_boot_count_prop)
+get_prop(recovery, device_config_configuration_prop)
+get_prop(recovery, device_config_connectivity_prop)
+get_prop(recovery, device_config_input_native_boot_prop)
+get_prop(recovery, device_config_lmkd_native_prop)
+get_prop(recovery, device_config_media_native_prop)
+get_prop(recovery, device_config_netd_native_prop)
+get_prop(recovery, device_config_profcollect_native_boot_prop)
+get_prop(recovery, device_config_reset_performed_prop)
+get_prop(recovery, device_config_runtime_native_boot_prop)
+get_prop(recovery, device_config_runtime_native_prop)
+get_prop(recovery, device_config_statsd_native_boot_prop)
+get_prop(recovery, device_config_statsd_native_prop)
+get_prop(recovery, device_config_storage_native_boot_prop)
+get_prop(recovery, device_config_swcodec_native_prop)
+get_prop(recovery, device_config_sys_traced_prop)
+get_prop(recovery, device_config_window_manager_native_boot_prop)
+get_prop(recovery, device_logging_prop)
+get_prop(recovery, drm_service_config_prop)
+get_prop(recovery, dumpstate_options_prop)
+get_prop(recovery, dynamic_system_prop)
+get_prop(recovery, exported_bluetooth_prop)
+get_prop(recovery, exported_overlay_prop)
+get_prop(recovery, firstboot_prop)
+get_prop(recovery, framework_watchdog_config_prop)
+get_prop(recovery, hal_dumpstate_config_prop)
+get_prop(recovery, heapprofd_enabled_prop)
+get_prop(recovery, hypervisor_prop)
+get_prop(recovery, incremental_prop)
+get_prop(recovery, init_perf_lsm_hooks_prop)
+get_prop(recovery, init_svc_debug_prop)
+get_prop(recovery, keyguard_config_prop)
+get_prop(recovery, keystore_listen_prop)
+get_prop(recovery, last_boot_reason_prop)
+get_prop(recovery, llkd_prop)
+get_prop(recovery, lmkd_prop)
+get_prop(recovery, logpersistd_logging_prop)
+get_prop(recovery, lower_kptr_restrict_prop)
+get_prop(recovery, lowpan_prop)
+get_prop(recovery, lpdumpd_prop)
+get_prop(recovery, media_config_prop)
+get_prop(recovery, media_variant_prop)
+get_prop(recovery, mm_events_config_prop)
+get_prop(recovery, mmc_prop)
+get_prop(recovery, mock_ota_prop)
+get_prop(recovery, net_464xlat_fromvendor_prop)
+get_prop(recovery, net_connectivity_prop)
+get_prop(recovery, net_dns_prop)
+get_prop(recovery, netd_stable_secret_prop)
+get_prop(recovery, nnapi_ext_deny_product_prop)
+get_prop(recovery, odsign_prop)
+get_prop(recovery, oem_unlock_prop)
+get_prop(recovery, overlay_prop)
+get_prop(recovery, packagemanager_config_prop)
+get_prop(recovery, perf_drop_caches_prop)
+get_prop(recovery, persist_vendor_debug_wifi_prop)
+get_prop(recovery, persistent_properties_ready_prop)
+get_prop(recovery, power_debug_prop)
+get_prop(recovery, profcollectd_node_id_prop)
+get_prop(recovery, provisioned_prop)
+get_prop(recovery, qemu_hw_prop)
+get_prop(recovery, qemu_sf_lcd_density_prop)
+get_prop(recovery, radio_cdma_ecm_prop)
+get_prop(recovery, rebootescrow_hal_prop)
+get_prop(recovery, retaildemo_prop)
+get_prop(recovery, safemode_prop)
+get_prop(recovery, sendbug_config_prop)
+get_prop(recovery, surfaceflinger_display_prop)
+get_prop(recovery, suspend_prop)
+get_prop(recovery, system_adbd_prop)
+get_prop(recovery, system_boot_reason_prop)
+get_prop(recovery, system_jvmti_agent_prop)
+get_prop(recovery, system_lmk_prop)
+get_prop(recovery, system_trace_prop)
+get_prop(recovery, test_boot_reason_prop)
+get_prop(recovery, test_harness_prop)
+get_prop(recovery, theme_prop)
+get_prop(recovery, time_prop)
+get_prop(recovery, tombstone_config_prop)
+get_prop(recovery, traced_enabled_prop)
+get_prop(recovery, traced_lazy_prop)
+get_prop(recovery, traced_perf_enabled_prop)
+get_prop(recovery, userspace_reboot_exported_prop)
+get_prop(recovery, userspace_reboot_log_prop)
+get_prop(recovery, userspace_reboot_test_prop)
+get_prop(recovery, vehicle_hal_prop)
+get_prop(recovery, vendor_security_patch_level_prop)
+get_prop(recovery, verity_status_prop)
+get_prop(recovery, vold_post_fs_data_prop)
+get_prop(recovery, wifi_config_prop)
+get_prop(recovery, wifi_hal_prop)
+get_prop(recovery, wifi_prop)
+get_prop(recovery, zram_config_prop)
+get_prop(recovery, zram_control_prop)
+set_prop(recovery, build_prop)
+set_prop(recovery, build_bootimage_prop)
+set_prop(recovery, build_vendor_prop)
+set_prop(recovery, build_odm_prop)
+allow recovery media_rw_data_file:dir { write };
+allow recovery media_rw_data_file:dir { add_name };
+allow recovery media_rw_data_file:dir { create };
+allow recovery system_data_file:file { read };
+allow recovery system_data_file:file { open };
+allow recovery system_data_file:dir { write };
+allow recovery system_data_file:dir { remove_name };
+allow recovery system_data_file:file { unlink };
+allow recovery system_data_file:dir { add_name };
+allow recovery system_data_file:file { create };
+allow recovery system_data_file:file { write };
+allow recovery system_data_file:file { setattr };
+allow recovery kernel:system { module_request };
+allow recovery system_data_file:file { ioctl };
+allow recovery self:capability { fsetid };
+allow recovery tmpfs:fifo_file { create };
+allow recovery tmpfs:fifo_file { read };
+allow recovery tmpfs:fifo_file { open };
+allow recovery rootfs:fifo_file { create };
+allow recovery rootfs:fifo_file { read };
+allow recovery rootfs:fifo_file { open };
+allow recovery self:netlink_kobject_uevent_socket { read };
+allow recovery mtp_device:chr_file { write };
+allow recovery mtp_device:chr_file { open };
+allow recovery mtp_device:chr_file { read };
+allow recovery vfat:dir { read };
+allow recovery vfat:dir { open };
+allow recovery vfat:file { getattr };
+allow recovery kmsg_device:chr_file { read };
+allow recovery kmsg_device:chr_file { open };
+allow recovery logdr_socket:sock_file { write };
+allow recovery logd:unix_stream_socket { connectto };
