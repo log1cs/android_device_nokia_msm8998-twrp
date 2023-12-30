@@ -11,4 +11,3 @@ TARGET_OTA_ASSERT_DEVICE := NLA,NB1
 
 # Include device common makefiles
 include device/nokia/msm8998-common/BoardConfigCommon.mk
-
